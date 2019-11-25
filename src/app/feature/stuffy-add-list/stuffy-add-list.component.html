@@ -1,0 +1,27 @@
+<h1>{{title}}</h1>
+<label>ID</label><input [(ngModel)]="stuffy.id" type="number" placeholder="enter a #"><br>
+<label>Type</label><input [(ngModel)]="stuffy.type" type="text" placeholder="enter an type"><br>
+<label>Color</label><input [(ngModel)]="stuffy.color" type="text" placeholder="enter an color"><br>
+<label>Size</label><input [(ngModel)]="stuffy.size" type="text" placeholder="enter a size"><br>
+<label>Limbs</label><input [(ngModel)]="stuffy.limbs" type="number" placeholder="enter #"><br>
+<button (click)='addStuffy()'>Add</button><br>
+<h2>Stuffies List</h2>
+<table class="table">
+    <tr>
+        <th>ID</th>
+        <th>Type</th>
+        <th>Color</th>
+        <th>Size</th>
+        <th>Limbs</th>
+    </tr>
+    <tr *ngIf="!stuffies||stuffies.length==0">
+        <td colspan='5' style="text-align: center;">No stuffies yet</td>
+    </tr>
+    <tr *ngFor="let s of stuffies">
+        <td>{{s.id}}</td>
+        <td>{{s.type}}</td>
+        <td>{{s.color}}</td>
+        <td>{{s.size}}</td>
+        <td>{{s.limbs}}</td>
+    </tr>
+</table>
